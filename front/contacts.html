@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Luso Beauty</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Luso Beauty</h1>
+                </div>
+                <nav class="nav">
+                    <a href="index.html">Главная</a>
+                    <a href="catalog.html">Каталог</a>
+                    <a href="about.html">О нас</a>
+                    <a href="contacts.html" class="active">Контакты</a>
+                    <a href="favorites.html">Избранное</a>
+
+                </nav>
+                <div class="header-actions">
+                    <div class="auth-buttons" id="authButtons">
+                        <button class="btn-secondary" onclick="showAuthModal()">Войти</button>
+                        <button class="btn-primary" onclick="showAuthModal('register')">Регистрация</button>
+                    </div>
+                    <div class="user-menu" id="userMenu" style="display: none;">
+                        <span id="userName"></span>
+                        <button class="btn-secondary" onclick="logout()">Выйти</button>
+                    </div>
+                    <button class="cart-btn" onclick="window.location.href='cart.html'">
+                        <i class="fas fa-shopping-cart"></i> Корзина <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="contacts-simple">
+        <div class="container">
+            <h1>Контакты</h1>
+
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <h3><i class="fas fa-phone"></i> Телефон</h3>
+                    <p>+7 (999) 123-45-67</p>
+                    <small>Ежедневно с 9:00 до 21:00</small>
+                </div>
+
+                <div class="contact-card">
+                    <h3><i class="fas fa-envelope"></i> Email</h3>
+                    <p>info@lusobeauty.ru</p>
+                    <small>Отвечаем быстро</small>
+                </div>
+
+                <div class="contact-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Адрес</h3>
+                    <p>Оренбург, пр. Победы, 13</p>
+                    <small>Метро Тверская</small>
+                </div>
+
+                <div class="contact-card">
+                    <h3><i class="fas fa-clock"></i> Время работы</h3>
+                    <p>Пн-Пт: 9:00-21:00</p>
+                    <p>Сб-Вс: 10:00-20:00</p>
+                </div>
+            </div>
+
+            <div class="contact-form-simple">
+                <h2>Напишите нам</h2>
+                <form>
+                    <input type="text" placeholder="Ваше имя" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Ваше сообщение" rows="4" required></textarea>
+                    <button type="submit" class="btn-primary">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Luso Beauty. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Модальное окно авторизации -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="authModalTitle">Вход в аккаунт</h2>
+                <button class="close-btn" onclick="closeAuthModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="authForm" onsubmit="handleAuth(event)">
+                    <div id="registerFields" style="display: none;">
+                        <input type="text" id="name" placeholder="Имя" required>
+                    </div>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="password" id="password" placeholder="Пароль" required>
+                    <button type="submit" class="btn-primary">Продолжить</button>
+                </form>
+                <p id="authSwitchText">
+                    Нет аккаунта?
+                    <a href="#" onclick="switchAuthMode('register')">Зарегистрироваться</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

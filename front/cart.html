@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина - Luso Beauty</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Luso Beauty</h1>
+                </div>
+                <nav class="nav">
+                    <a href="index.html">Главная</a>
+                    <a href="catalog.html">Каталог</a>
+                    <a href="about.html">О нас</a>
+                    <a href="contacts.html">Контакты</a>
+                </nav>
+                <div class="header-actions">
+                    <div class="auth-buttons" id="authButtons">
+                        <button class="btn-secondary" onclick="showAuthModal()">Войти</button>
+                        <button class="btn-primary" onclick="showAuthModal('register')">Регистрация</button>
+                    </div>
+                    <div class="user-menu" id="userMenu" style="display: none;">
+                        <span id="userName"></span>
+                        <button class="btn-secondary" onclick="logout()">Выйти</button>
+                    </div>
+                    <button class="cart-btn" onclick="window.location.href='cart.html'">
+                        <i class="fas fa-shopping-cart"></i> Корзина <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="cart">
+        <div class="container">
+            <h1>Корзина покупок</h1>
+            <div id="cartContent">
+                <div class="cart-items" id="cartItems">
+                    <!-- Товары в корзине -->
+                </div>
+                <div class="cart-summary">
+                    <div class="total">
+                        <strong>Итого: <span id="totalAmount">0</span> ₽</strong>
+                    </div>
+                    <button class="btn-primary" onclick="checkout()" id="checkoutBtn">Оформить заказ</button>
+                </div>
+            </div>
+            <div id="emptyCart" style="display: none;">
+                <!-- Сообщение о пустой корзине -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Luso Beauty. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Модальное окно авторизации -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="authModalTitle">Вход в аккаунт</h2>
+                <button class="close-btn" onclick="closeAuthModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="authForm" onsubmit="handleAuth(event)">
+                    <div id="registerFields" style="display: none;">
+                        <input type="text" id="name" placeholder="Имя" required>
+                    </div>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="password" id="password" placeholder="Пароль" required>
+                    <button type="submit" class="btn-primary">Продолжить</button>
+                </form>
+                <p id="authSwitchText">
+                    Нет аккаунта?
+                    <a href="#" onclick="switchAuthMode('register')">Зарегистрироваться</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

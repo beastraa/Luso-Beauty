@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас - Luso Beauty</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Luso Beauty</h1>
+                </div>
+                <nav class="nav">
+                    <a href="index.html">Главная</a>
+                    <a href="catalog.html">Каталог</a>
+                    <a href="about.html" class="active">О нас</a>
+                    <a href="contacts.html">Контакты</a>
+                    <a href="favorites.html">Избранное</a>
+
+                </nav>
+                <div class="header-actions">
+                    <div class="auth-buttons" id="authButtons">
+                        <button class="btn-secondary" onclick="showAuthModal()">Войти</button>
+                        <button class="btn-primary" onclick="showAuthModal('register')">Регистрация</button>
+                    </div>
+                    <div class="user-menu" id="userMenu" style="display: none;">
+                        <span id="userName"></span>
+                        <button class="btn-secondary" onclick="logout()">Выйти</button>
+                    </div>
+                    <button class="cart-btn" onclick="window.location.href='cart.html'">
+                        <i class="fas fa-shopping-cart"></i> Корзина <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="about-page">
+        <div class="container">
+            <div class="about-content">
+                <h1>О Luso Beauty</h1>
+
+                <div class="about-hero">
+                    <h2><i class="fas fa-ribbon"></i> Премиальная косметика с заботой о вас</h2>
+                    <p>Мы создаем продукты, которые подчеркивают вашу естественную красоту</p>
+                </div>
+
+                <div class="about-section">
+                    <h2><i class="fas fa-star"></i> Наша история</h2>
+                    <p>Luso Beauty - это премиальный бренд косметики, созданный в 2020 году для тех, кто ценит качество
+                        и роскошь. Мы начинались как небольшая семейная компания с мечтой изменить индустрию красоты, и
+                        сегодня выросли в признанный бренд с тысячами довольных клиентов по всей стране.</p>
+                </div>
+
+                <div class="about-section">
+                    <h2><i class="fas fa-gem"></i> Наша философия</h2>
+                    <p>Мы верим, что настоящая красота идет изнутри. Наша миссия - помочь каждой женщине раскрыть свою
+                        естественную красоту с помощью качественной косметики, созданной с заботой о коже и окружающей
+                        среде.</p>
+                    <div class="philosophy-points">
+                        <div class="point">
+                            <h3><i class="fas fa-leaf"></i> Натуральность</h3>
+                            <p>Используем только безопасные и натуральные ингредиенты</p>
+                        </div>
+                        <div class="point">
+                            <h3><i class="fas fa-flask"></i> Инновации</h3>
+                            <p>Сочетаем традиции с современными технологиями</p>
+                        </div>
+                        <div class="point">
+                            <h3><i class="fas fa-heart"></i> Забота</h3>
+                            <p>Создаем продукты, которые действительно работают</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-section">
+                    <h2><i class="fas fa-microscope"></i> Качество и инновации</h2>
+                    <p>Все наши продукты проходят строгий контроль качества и тестирование. Мы сочетаем последние
+                        научные разработки с натуральными компонентами для создания эффективных средств.</p>
+                    <ul class="quality-list">
+                        <li><i class="fas fa-check"></i> Без парабенов и сульфатов</li>
+                        <li><i class="fas fa-check"></i> Гипоаллергенная формула</li>
+                        <li><i class="fas fa-check"></i> Тестирование под дерматологическим контролем</li>
+                        <li><i class="fas fa-check"></i> Натуральные ингредиенты премиум-класса</li>
+                        <li><i class="fas fa-check"></i> Экологичная упаковка</li>
+                        <li><i class="fas fa-check"></i> Сделано с любовью</li>
+                    </ul>
+                </div>
+
+                <div class="about-section">
+                    <h2><i class="fas fa-seedling"></i> Устойчивое развитие</h2>
+                    <p>Мы заботимся о планете и используем экологичную упаковку, поддерживаем программы переработки и
+                        стремимся минимизировать наш экологический след. Наша цель - создавать красоту без вреда для
+                        природы.</p>
+                </div>
+
+                <div class="about-stats">
+                    <div class="stat">
+                        <h3>10,000+</h3>
+                        <p>Довольных клиентов</p>
+                    </div>
+                    <div class="stat">
+                        <h3>50+</h3>
+                        <p>Уникальных продуктов</p>
+                    </div>
+                    <div class="stat">
+                        <h3>3 года</h3>
+                        <p>На рынке красоты</p>
+                    </div>
+                    <div class="stat">
+                        <h3>98%</h3>
+                        <p>Рекомендуют нас друзьям</p>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <h2>Присоединяйтесь к нашей семье</h2>
+                    <p>Станьте частью сообщества Luso Beauty и откройте для себя мир настоящей роскоши</p>
+                    <button class="btn-primary" onclick="window.location.href='catalog.html'">Начать покупки</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Luso Beauty. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Модальное окно авторизации -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="authModalTitle">Вход в аккаунт</h2>
+                <button class="close-btn" onclick="closeAuthModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="authForm" onsubmit="handleAuth(event)">
+                    <div id="registerFields" style="display: none;">
+                        <input type="text" id="name" placeholder="Имя" required>
+                    </div>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="password" id="password" placeholder="Пароль" required>
+                    <button type="submit" class="btn-primary">Продолжить</button>
+                </form>
+                <p id="authSwitchText">
+                    Нет аккаунта?
+                    <a href="#" onclick="switchAuthMode('register')">Зарегистрироваться</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
